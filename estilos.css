@@ -1,0 +1,57 @@
+body, html{
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+}
+header, section, article, footer {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+header {
+    height: 170px;
+    background-color: darkmagenta;
+    position: sticky;
+    top: 0;
+}
+#titulo {
+    height: 150px;
+    width: 400px;
+    float: left;
+    text-align: center;
+}
+h1 {
+    font-size: 36px;
+    color: aliceblue;
+}
+#botonesinicio {
+    height: 150px;
+    width: 800px;
+    float: right;
+}
+#botonesinicio ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+#botonesinicio ul li {
+    flex-grow: 1;
+}
+#botonesinicio ul li a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin: 15px;
+    padding: 45px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    background-color: coral;
+    border-radius: 50px;
+    border: 3px rgb(247, 46, 46) solid;
+}
+#botonesinicio ul li a:hover {
+    background-color: blueviolet;
+}
