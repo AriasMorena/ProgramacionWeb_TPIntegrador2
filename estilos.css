@@ -13,6 +13,20 @@ header {
     position: sticky;
     top: 0;
 }
+section { 
+    background-color: aquamarine;
+    height: 800px;
+
+}
+article {
+    background-color: burlywood;
+    height: 800px;
+
+}
+footer {
+    background-color: brown;
+    height: 200px;
+}
 #titulo {
     height: 150px;
     width: 400px;
