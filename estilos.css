@@ -8,10 +8,11 @@ header, section, article, footer {
     margin-right: auto;
 }
 header {
-    height: 170px;
+    height: 140px;
     background-color: darkmagenta;
     position: sticky;
     top: 0;
+    z-index: 1000;
 }
 section { 
     background-color: aquamarine;
