@@ -1,0 +1,9 @@
+body, html{
+    scroll-behavior: smooth ;
+    font-family: Cursive fonts;
+}
+header, section, article, footer {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
