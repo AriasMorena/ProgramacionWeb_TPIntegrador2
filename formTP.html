@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form TP</title>
+</head>
+<body>
+    <div id="contenedor" class="borde">
+        <h2>Ingrese Datos</h2>
+          <form action="" id="form">
+            <label for="datos">Nombre y Apellido:</label>
+            <input type="text" id="Datos" min="10" max="50"><br>
+            <br><label for="Mail">Email:</label>
+            <input type="email" id="Mail"><br>
+            <label for="Telefono">Teléfono</label><br>
+            <input type="tel" id="Telefono"><br>
+            <br><input id="botones" type ="submit" value="Enviar">
+</body>
+</html>
+<style>
+#contenedor{
+    width: 250px;
+    height: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-left: 530px;
+    margin-top: 30px;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+}
+#contenedor input {
+    display: block;      
+}
+.borde{
+    border: 3px solid rgb(81, 2, 105);
+    border-radius: 15px;
+    box-shadow: 5px 10px 7px rgb(53, 1, 63);
+}
+h1{
+    text-align: center;
+}
+h2 {
+    color: rgb(45, 3, 83);
+}
+#botones {
+    background-color: rgb(31, 2, 58);
+    color: white;
+}
+</style>
+<script>
+    const datos = document.getElementById("Datos");
+    const mail = document.getElementById("Mail");
+    const tel = document.getElementById("Telefono");
+    const form = document.getElementById("form");
+
+    form.addEventListener("submit", validar);
+
+    function validar(e){ 
+
+    const regexData = /^[a-zA-ZÀ-ÿ]+ [a-zA-ZÀ-ÿ]+$/
+    const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    const regexTel = /^\d{3}-\d{2}-\d{3}$/
+
+     if (!regexData.test(datos.value)){
+        alert("Datos ingresados incorrectamente");
+        e.preventDefault();
+        return false;
+    } 
+     if (!regexEmail.test(mail.value)){
+        alert("Email incorrecto");
+        e.preventDefault();
+        return false;
+    }
+     if (!regexTel.test(tel.value)){
+        alert("Numero de telefono incorrecto. Debe ser 000-00-000");
+        e.preventDefault();
+        return false;
+    } 
+    alert("Formulario enviado!");
+  }   
+</script>
