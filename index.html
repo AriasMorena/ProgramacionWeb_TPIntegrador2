@@ -35,15 +35,15 @@
         <h2>Ingrese Datos</h2>
           <form action="" id="form">
             <label for="datos">Nombre y Apellido:</label>
-            <input type="text" id="Datos" min="10" max="50" required><br>
+            <input type="text" id="datos" min="10" max="50" required><br>
             <span id ="errorDatos" class="errores"></span><br>
             <br><label for="Mail">Email:</label>
-            <input type="email" id="Mail" required><br>
+            <input type="email" id="mail" required><br>
             <span id="errorMail" class="errores"></span><br>
             <label for="Telefono">Teléfono</label><br>
-            <input type="tel" id="Telefono" required><br>
+            <input type="tel" id="telefono" required><br>
             <span id="errorTel" class="errores"></span><br>
-            <br><input id="botones" type ="submit" value="Enviar">
+            <br><button type ="submit" id="botones">Enviar</button>
      </div>
      <div id="errores"></div>
         <div id="otros">
@@ -99,9 +99,9 @@
 </html>
 
 <script>
-    const datos = document.getElementById("Datos");
-    const mail = document.getElementById("Mail");
-    const tel = document.getElementById("Telefono");
+    const datos = document.getElementById("datos");
+    const mail = document.getElementById("mail");
+    const tel = document.getElementById("telefono");
     const form = document.getElementById("form");
 
     let valido = true;
@@ -136,12 +136,31 @@
     alert("Formulario enviado!");
   } 
 
-  function mostrarError(){
-
-    
+  function mostrarError(idElemento, mensaje){
+    const elementoError = document.getElementById(idElemento);
+    elementoError.textContent = mensaje;
+    elementoError.style.color = 'red';
   }
 
   function ocultarError() {
     document.querySelectorAll('.error').forEach (elemento => elemento.textContent = '');
   }
+
+if (valido) {
+   const cartaExistente = document.getElementById("carta-exito");
+   if (cartaExistente) cartaExistente.remove()
+
+   const carta = document.createElement("div");
+   carta.id = "carta-exito";
+   carta.style.border = "2px solid green";
+   carta.borderRadius = "0.5rem";
+   carta.style.backgroundColor = "green";
+   carta.style.padding = "1rem";
+   carta.style.margin = "1rem auto";
+   carta.style.width = "50%";
+   carta.style.textAlign = "center";
+   carta.textContent = Usuario ${datos} email ${mail} telefono ${tel};
+
+   document.body.appendChild(carta);
+}
 </script>
