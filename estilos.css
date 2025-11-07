@@ -82,10 +82,12 @@ h3 {
 .info {
     padding-top: 100px;
     padding-bottom: 150px;
+    margin-right: 100px;
     text-align: center;
     font-size: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
+    float: right;
 }
 .titulos {
     color: black;
@@ -146,10 +148,11 @@ h3 {
     color: black;
 }
 #otros {
-    text-align: right;
+    text-align: center;
     display: block;
-    margin-top: 5px;
-    margin-right: 15px;
+    margin-top: 50px;
+    margin-left: 180px;
+    float: left;
 }
 .enlaces {
     color: black;
@@ -168,4 +171,34 @@ h3 {
     font-weight: bold;
     color: aliceblue;
     padding-right: 350px;
+}
+#contenedor{
+    width: 250px;
+    height: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-left: 130px;
+    margin-top: 30px;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+    float: left;
+}
+#contenedor input {
+    display: block;      
+}
+.borde{
+    border: 3px solid rgb(81, 2, 105);
+    border-radius: 15px;
+    box-shadow: 5px 10px 7px rgb(53, 1, 63);
+}
+h1{
+    text-align: center;
+}
+h2 {
+    color: rgb(45, 3, 83);
+}
+#botones {
+    background-color: rgb(31, 2, 58);
+    color: white;
 }

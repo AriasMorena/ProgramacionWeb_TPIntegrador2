@@ -27,9 +27,25 @@
                  para llevar y comer en el local, comprartir tus mejores momentos<br>
                  con familia y amigos y escuchar buena música.<br>
                  No te pierdas la oprtunidad de probar nuestro menú<br>
-                 Cuando vengas no te vas a querer ir!!
-            </p>          
+                 Cuando vengas no te vas a querer ir!!<br>
+                 (Ingresa tus datos para tener descuentos)
+            </p>           
         </div>
+     <div id="contenedor" class="borde">
+        <h2>Ingrese Datos</h2>
+          <form action="" id="form">
+            <label for="datos">Nombre y Apellido:</label>
+            <input type="text" id="Datos" min="10" max="50" required><br>
+            <span id ="errorDatos" class="errores"></span><br>
+            <br><label for="Mail">Email:</label>
+            <input type="email" id="Mail" required><br>
+            <span id="errorMail" class="errores"></span><br>
+            <label for="Telefono">Teléfono</label><br>
+            <input type="tel" id="Telefono" required><br>
+            <span id="errorTel" class="errores"></span><br>
+            <br><input id="botones" type ="submit" value="Enviar">
+     </div>
+     <div id="errores"></div>
         <div id="otros">
           <h3>Visite también :</h3>
              <a href="./pag2/pag2.html" class="enlaces"> pagina 2</a><br>
@@ -81,3 +97,51 @@
     </footer>
 </body>
 </html>
+
+<script>
+    const datos = document.getElementById("Datos");
+    const mail = document.getElementById("Mail");
+    const tel = document.getElementById("Telefono");
+    const form = document.getElementById("form");
+
+    let valido = true;
+    ocultarError();
+
+    form.addEventListener("submit", validar);
+
+    function validar(e){ 
+
+    const regexData = /^[a-zA-ZÀ-ÿ]+ [a-zA-ZÀ-ÿ]+$/
+    const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    const regexTel = /^\d{3}-\d{2}-\d{3}$/
+
+     if (datos.value.length < 10 || datos.value.length > 50){
+        mostrarError("Datos ingresados incorrectamente");
+        e.preventDefault();
+        return valido = false;
+    } 
+     if (!regexEmail.test(mail.value)){
+        mostrarError("Email incorrecto");
+        e.preventDefault();
+        return valido = false;
+    }
+     if (!regexTel.test(tel.value)){
+        mostrarError("Numero de telefono incorrecto. Debe ser 000-00-000");
+        e.preventDefault();
+        return valido = false;
+    } 
+    if (valido) {
+        displayData(datos, mail, tel);    
+    }   
+    alert("Formulario enviado!");
+  } 
+
+  function mostrarError(){
+
+    
+  }
+
+  function ocultarError() {
+    document.querySelectorAll('.error').forEach (elemento => elemento.textContent = '');
+  }
+</script>
