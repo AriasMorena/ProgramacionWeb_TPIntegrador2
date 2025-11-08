@@ -35,15 +35,15 @@
         <h2>Ingrese Datos</h2>
           <form action="" id="form">
             <label for="datos">Nombre y Apellido:</label>
-            <input type="text" id="Datos" min="10" max="50" required><br>
+            <input type="text" id="datos" min="10" max="50" required><br>
             <span id ="errorDatos" class="errores"></span><br>
             <br><label for="Mail">Email:</label>
-            <input type="email" id="Mail" required><br>
+            <input type="email" id="mail" required><br>
             <span id="errorMail" class="errores"></span><br>
             <label for="Telefono">Teléfono</label><br>
-            <input type="tel" id="Telefono" required><br>
+            <input type="tel" id="telefono" required><br>
             <span id="errorTel" class="errores"></span><br>
-            <br><input id="botones" type ="submit" value="Enviar">
+            <br><button type ="submit" id="botones">Enviar</button>
      </div>
      <div id="errores"></div>
         <div id="otros">
@@ -95,11 +95,24 @@
             <p>A la vuelta de la esquina</p>
         </div>
     </footer>
+<<<<<<< HEAD
     <script>
     const datos = document.getElementById("Datos");
     const mail = document.getElementById("Mail");
     const tel = document.getElementById("Telefono");
+=======
+</body>
+</html>
+
+<script>
+    const datos = document.getElementById("datos");
+    const mail = document.getElementById("mail");
+    const tel = document.getElementById("telefono");
+>>>>>>> 6eb40bba65d61bda8fe8079e8ba5e96ba8a87cb1
     const form = document.getElementById("form");
+    const eDatos = document.getElementById("errorDatos");
+    const eMail = document.getElementById("errorMail");
+    const eTel = document.getElementById("errorTel");
 
     let valido = true;
     ocultarError();
@@ -112,34 +125,72 @@
     const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     const regexTel = /^\d{3}-\d{2}-\d{3}$/
 
+    mostrarError(eDatos, "");
+    mostrarError(eMail, "");
+    mostrarError(eTel, "");
+
      if (datos.value.length < 10 || datos.value.length > 50){
-        mostrarError("Datos ingresados incorrectamente");
-        e.preventDefault();
-        return valido = false;
+        mostrarError(eDatos, "Datos ingresados incorrectamente");
+         valido = false;
     } 
      if (!regexEmail.test(mail.value)){
-        mostrarError("Email incorrecto");
-        e.preventDefault();
-        return valido = false;
+        mostrarError(eMail, "Email incorrecto");
+         valido = false;
     }
      if (!regexTel.test(tel.value)){
-        mostrarError("Numero de telefono incorrecto. Debe ser 000-00-000");
-        e.preventDefault();
-        return valido = false;
+        mostrarError(eTel, "Numero de telefono incorrecto. Debe ser 000-00-000");
+         valido = false;
     } 
-    if (valido) {
-        displayData(datos, mail, tel);    
+    if (!valido) {
+        e.preventDefault();
+        return false;
+    } else {
+        alert("Formulario enviado!");
+        return true;
     }   
-    alert("Formulario enviado!");
-  } 
+  }
 
+<<<<<<< HEAD
   function mostrarError(){
+=======
+    function mostrarError(idElemento, mensaje) {
+    if (elementoError) {
+        elementoError.textContent = mensaje;
+        elementoError.style.color = 'red';
+    }
+>>>>>>> 6eb40bba65d61bda8fe8079e8ba5e96ba8a87cb1
   }
 
   function ocultarError() {
     document.querySelectorAll('.error').forEach (elemento => elemento.textContent = '');
   }
+<<<<<<< HEAD
 </script>
 </body>
 </html>
 
+=======
+
+   function displayData(datos, mail, tel) {
+   const resultados = document.getElementById("errores");
+   resultados.innerHTML = '';
+
+   const titulo = document.createElement('h2');
+   titulo.textContent = 'Datos enviados correctamente';
+
+    const nombre = document.createElement('p');
+    nombre.textContent = `Nombre: ${datos}`;
+
+    const email = document.createElement('p');
+    email.textContent = `Email: ${mail}`;
+
+    const telefono = document.createElement('p');
+    telefono.textContent = `Teléfono: ${tel}`;
+
+    resultados.appendChild(titulo);
+    resultados.appendChild(datos);
+    resultados.appendChild(mail);
+    resultados.appendChild(tel);
+}
+</script>
+>>>>>>> 6eb40bba65d61bda8fe8079e8ba5e96ba8a87cb1

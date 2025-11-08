@@ -2,11 +2,6 @@ body, html{
     scroll-behavior: smooth;
     font-family: sans-serif;
 }
-header, section, article, footer {
-    width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
 * {
     margin: 0;
     padding: 0;
@@ -20,11 +15,11 @@ header {
     z-index: 1000;
 }
 section { 
-    background-color: rgb(194, 87, 25);
+    background-color: peru;
     height: 500px;
 }
 article {
-    background-color: rgb(177, 100, 13);
+    background-color: peru;
     height: 600px;
 }
 footer {
@@ -72,12 +67,12 @@ h3 {
     font-size: 15px;
     font-weight: bold;
     text-align: center;
-    background-color: rgb(245, 95, 41);
+    background-color: burlywood;
     border-radius: 50px;
-    border: 3px rgb(240, 4, 4) solid;
+    border: 3px rgb(172, 76, 76) solid;
 }
 #botonesinicio ul li a:hover {
-    background-color: rgb(199, 66, 17);
+    background-color: rgb(231, 1, 1);
 }
 .info {
     padding-top: 100px;
@@ -98,7 +93,7 @@ h3 {
 #a-caja1 {
     height: 550px;
     width: 350px;
-    background-image: url(imagenes/video-3.webp);
+    background-image: url(imagenes/pizzas.webp);
     background-size: cover;
     float: left;
     margin-left: 30px;
@@ -115,10 +110,10 @@ h3 {
 #a-caja2 {
     height: 550px;
     width: 350px;
-    background-image: url(imagenes/images.jpg);
+    background-image: url(imagenes/hambu.jpg);
     background-size: cover;
     float: left;
-    margin-left: 50px;
+    margin-left: 120px;
     margin-top: 20px; 
 }
 #a-caja2 ul li {
@@ -132,12 +127,12 @@ h3 {
 #a-caja3 {
     height: 550px;
     width: 350px;
-    background-image: url(imagenes/imagen.jpg);
+    background-image: url(imagenes/empanada.jpg);
     background-size: cover;
-    float: left;
+    float: right;
     margin-left: 40px;
     margin-top: 20px;
-    margin-right: 10px;
+    margin-right: 30px;
 }
 #a-caja3 ul li {
     text-align: center;
@@ -177,28 +172,32 @@ h3 {
     height: auto;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    margin-left: 130px;
+    margin-left: 120px;
     margin-top: 30px;
     padding-top: 20px;
     padding-left: 50px;
     padding-bottom: 10px;
     float: left;
+    background-color: rgb(199, 115, 31);
 }
 #contenedor input {
-    display: block;      
+    display: block;     
 }
 .borde{
-    border: 3px solid rgb(81, 2, 105);
+    border: 3px solid rgb(172, 76, 76) ;
     border-radius: 15px;
-    box-shadow: 5px 10px 7px rgb(53, 1, 63);
+    box-shadow: 5px 10px 7px rgb(182, 84, 19);
 }
 h1{
     text-align: center;
 }
 h2 {
-    color: rgb(45, 3, 83);
+    color: white;
 }
 #botones {
-    background-color: rgb(31, 2, 58);
-    color: white;
+    background-color: rgb(226, 230, 1);
+    color: black;
+}
+.errores {
+    color: red;
 }
