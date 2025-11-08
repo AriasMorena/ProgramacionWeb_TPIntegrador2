@@ -95,12 +95,6 @@
             <p>A la vuelta de la esquina</p>
         </div>
     </footer>
-<<<<<<< HEAD
-    <script>
-    const datos = document.getElementById("Datos");
-    const mail = document.getElementById("Mail");
-    const tel = document.getElementById("Telefono");
-=======
 </body>
 </html>
 
@@ -108,7 +102,6 @@
     const datos = document.getElementById("datos");
     const mail = document.getElementById("mail");
     const tel = document.getElementById("telefono");
->>>>>>> 6eb40bba65d61bda8fe8079e8ba5e96ba8a87cb1
     const form = document.getElementById("form");
     const eDatos = document.getElementById("errorDatos");
     const eMail = document.getElementById("errorMail");
@@ -141,35 +134,27 @@
         mostrarError(eTel, "Numero de telefono incorrecto. Debe ser 000-00-000");
          valido = false;
     } 
+    if (valido) {
+        displayData(datos, mail, tel);
+    }
+    alert("Formulario enviado!");
+
     if (!valido) {
         e.preventDefault();
-        return false;
-    } else {
-        alert("Formulario enviado!");
-        return true;
-    }   
+        return false;  
   }
+}
 
-<<<<<<< HEAD
-  function mostrarError(){
-=======
     function mostrarError(idElemento, mensaje) {
     if (elementoError) {
         elementoError.textContent = mensaje;
         elementoError.style.color = 'red';
     }
->>>>>>> 6eb40bba65d61bda8fe8079e8ba5e96ba8a87cb1
   }
 
   function ocultarError() {
     document.querySelectorAll('.error').forEach (elemento => elemento.textContent = '');
-  }
-<<<<<<< HEAD
-</script>
-</body>
-</html>
-
-=======
+  } 
 
    function displayData(datos, mail, tel) {
    const resultados = document.getElementById("errores");
@@ -190,7 +175,7 @@
     resultados.appendChild(titulo);
     resultados.appendChild(datos);
     resultados.appendChild(mail);
+  
     resultados.appendChild(tel);
-}
+   }
 </script>
->>>>>>> 6eb40bba65d61bda8fe8079e8ba5e96ba8a87cb1
