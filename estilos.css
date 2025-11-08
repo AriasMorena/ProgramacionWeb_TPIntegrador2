@@ -16,7 +16,7 @@ header {
 }
 section { 
     background-color: peru;
-    height: 800px;
+    height: 500px;
 }
 article {
     background-color: peru;
@@ -178,7 +178,7 @@ h3 {
     padding-left: 50px;
     padding-bottom: 10px;
     float: left;
-    background-color: rgb(231, 1, 1);
+    background-color: rgb(199, 115, 31);
 }
 #contenedor input {
     display: block;     
@@ -197,4 +197,7 @@ h2 {
 #botones {
     background-color: rgb(226, 230, 1);
     color: black;
+}
+.errores {
+    color: red;
 }

@@ -103,6 +103,9 @@
     const mail = document.getElementById("mail");
     const tel = document.getElementById("telefono");
     const form = document.getElementById("form");
+    const eDatos = document.getElementById("errorDatos");
+    const eMail = document.getElementById("errorMail");
+    const eTel = document.getElementById("errorTel");
 
     let valido = true;
     ocultarError();
@@ -115,52 +118,61 @@
     const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     const regexTel = /^\d{3}-\d{2}-\d{3}$/
 
+    mostrarError(eDatos, "");
+    mostrarError(eMail, "");
+    mostrarError(eTel, "");
+
      if (datos.value.length < 10 || datos.value.length > 50){
-        mostrarError("Datos ingresados incorrectamente");
-        e.preventDefault();
-        return valido = false;
+        mostrarError(eDatos, "Datos ingresados incorrectamente");
+         valido = false;
     } 
      if (!regexEmail.test(mail.value)){
-        mostrarError("Email incorrecto");
-        e.preventDefault();
-        return valido = false;
+        mostrarError(eMail, "Email incorrecto");
+         valido = false;
     }
      if (!regexTel.test(tel.value)){
-        mostrarError("Numero de telefono incorrecto. Debe ser 000-00-000");
-        e.preventDefault();
-        return valido = false;
+        mostrarError(eTel, "Numero de telefono incorrecto. Debe ser 000-00-000");
+         valido = false;
     } 
-    if (valido) {
-        displayData(datos, mail, tel);    
+    if (!valido) {
+        e.preventDefault();
+        return false;
+    } else {
+        alert("Formulario enviado!");
+        return true;
     }   
-    alert("Formulario enviado!");
-  } 
+  }
 
-  function mostrarError(idElemento, mensaje){
-    const elementoError = document.getElementById(idElemento);
-    elementoError.textContent = mensaje;
-    elementoError.style.color = 'red';
+    function mostrarError(idElemento, mensaje) {
+    if (elementoError) {
+        elementoError.textContent = mensaje;
+        elementoError.style.color = 'red';
+    }
   }
 
   function ocultarError() {
     document.querySelectorAll('.error').forEach (elemento => elemento.textContent = '');
   }
 
-if (valido) {
-   const cartaExistente = document.getElementById("carta-exito");
-   if (cartaExistente) cartaExistente.remove()
+   function displayData(datos, mail, tel) {
+   const resultados = document.getElementById("errores");
+   resultados.innerHTML = '';
 
-   const carta = document.createElement("div");
-   carta.id = "carta-exito";
-   carta.style.border = "2px solid green";
-   carta.borderRadius = "0.5rem";
-   carta.style.backgroundColor = "green";
-   carta.style.padding = "1rem";
-   carta.style.margin = "1rem auto";
-   carta.style.width = "50%";
-   carta.style.textAlign = "center";
-   carta.textContent = Usuario ${datos} email ${mail} telefono ${tel};
+   const titulo = document.createElement('h2');
+   titulo.textContent = 'Datos enviados correctamente';
 
-   document.body.appendChild(carta);
+    const nombre = document.createElement('p');
+    nombre.textContent = `Nombre: ${datos}`;
+
+    const email = document.createElement('p');
+    email.textContent = `Email: ${mail}`;
+
+    const telefono = document.createElement('p');
+    telefono.textContent = `Teléfono: ${tel}`;
+
+    resultados.appendChild(titulo);
+    resultados.appendChild(datos);
+    resultados.appendChild(mail);
+    resultados.appendChild(tel);
 }
 </script>
