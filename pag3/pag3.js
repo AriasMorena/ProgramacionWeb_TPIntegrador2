@@ -2,7 +2,9 @@ const imagenes = [
     "img/p1.jpeg",
     "img/p2.jpeg",
     "img/p3.jpeg",
-    "img/p4.jpeg"
+    "img/p4.jpeg",
+    "img/p5.jpeg",
+    "img/p6.avif"
 ];
 
 let contador = 0;
