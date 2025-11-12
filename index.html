@@ -9,131 +9,49 @@
 <body>
     <header>
         <div id="titulo">
-            <h1>Buena Comida</h1>
+            <h1>SkinCare</h1>
         </div>
             <nav id ="botonesinicio">
-                <ul>
-                    <li><a href= #section >Qué ofrecemos</a></li>
-                    <li><a href= #article >Nuestro Menú</a></li>
-                    <li><a href= #footer >Contacto</a></li>
+               <ul>
+                    <li><a href= "index.html">SkinCare</a></li>
+                    <li><a href= "./pag2/pag2.html">Ropa</a></li>
+                    <li><a href= "./pag3/pag3.html">Contacto</a></li>
                 </ul>
             </nav>
+            <div>
+               <button>Comprar</button>
+               <button>Carrito</button>
+            </div>
     </header>
     <section id="section">      
         <div id="info" class="info">
              <p>
-                 Ofrecemos pizzas, hamburguesas y empanadas.<br>
-                 Esta pagína ofrece ver nuestra variedad de comidas rapidas<br>
-                 para llevar y comer en el local, comprartir tus mejores momentos<br>
-                 con familia y amigos y escuchar buena música.<br>
-                 No te pierdas la oprtunidad de probar nuestro menú<br>
-                 Cuando vengas no te vas a querer ir!!<br>
-                 (Ingresa tus datos para tener descuentos)
-            </p>           
-        </div>
-     <div id="contenedor" class="borde">
-        <h2>Ingrese Datos</h2>
-          <form action="" id="form" novalidate onsubmit = "validar(event)">
-            <label for="datos">Nombre y Apellido:</label>
-            <input type="text" id="datos" min="10" max="50" required><br>
-            <div id ="errorDatos" class="errores"></div>
-            <br><label for="Mail">Email:</label>
-            <input type="email" id="mail" required><br>
-            <div id="errorMail" class="errores"></div>
-            <br><label for="Telefono">Teléfono:</label>
-            <input type="tel" id="telefono" required><br>
-            <div id="errorTel" class="errores"></div>
-            <br><button type ="submit" id="botones">Enviar</button>
-            <div id="mensaje"></div>
-     </div>
-        <div id="otros">
-          <h3>Visite también :</h3>
-             <a href="./pag2/pag2.html" class="enlaces"> pagina 2</a><br>
-             <a href="./pag3/pag3.html" class="enlaces"> pagina 3</a>
-        </div>
+                <b>THE NEW COLLECION IS NOW AVAILABLE</b><br>
+                 a perfect collection for this winter.<br>
+                 With unique textures to evolve with each use.
+             </p>
+        </div> 
     </section>
     <article id="article">
-        <div id="a-caja1">
-            <h2 class="titulos">Pizzas:</h2>
-            <ul>
-                <li>Especial</li>
-                <li>Muzzarella</li>
-                <li>Napolitana</li>
-                <li>Napolitana con jamón</li>
-                <li>Primavera</li>
-                <li>Fugazzeta</li>
-            </ul>
-        </div>
-        <div id="a-caja2">
-            <h2 class="titulos">Hamburguesas:</h2>
-            <ul>
-                <li>Simple</li>
-                <li>completa</li>
-                <li>(jamón, queso, huevo frito, lechuga. Guarnición de papas fritas)</li>
-            </ul>
-        </div>
-        <div id="a-caja3">
-            <h2 class="titulos">Empanadas:</h2>
-            <ul>
-                <li>Humita</li>
-                <li>Pollo</li>
-                <li>Carne</li>
-                <li>Caprese</li>
-                <li>Verdura</li>
-                <li>Jamón y queso</li>
-            </ul>
-        </div>
+         <div class="carousel-container">
+        <img id="carousel-image" src="img/p1.jpeg" alt="carrusel">
+      </div>
+      <div class="carousel-buttons">
+      <button onclick="cambiarImagen(-1)">Anterior</button>
+      <button onclick="cambiarImagen(1)">Siguiente</button>
+      </div>
+      <script src="pag3.js"></script>
     </article>
     <footer id="footer">
-        <div id="redes">
-            <h2>Redes</h2>
-            <p>Instagram: @Buena_Comida</p><br>
-            <p>Facebook: @buenaComida </p>
-        </div>
-        <div id="ubicacion">
-            <h2>Ubicación</h2>
-            <p>A la vuelta de la esquina</p>
-        </div>
+     <div id="Redes">
+           <h3>Social networks:</h3>
+           <p>Instagram: @khymads</p>
+           <p>Facebook: @khymads</p>
+       </div>
+       <div id="ubicacion">
+        <h2>Local in:</h2>
+        <p>Shopping center.</p>
+       </div>
     </footer>
-  <script>
-    const datos = document.getElementById("datos");
-    const mail = document.getElementById("mail"); 
-    const tel = document.getElementById("telefono");
-    const form = document.getElementById("form");
-
-    function validar(e){ 
-    
-    let valido = true;
-    e.preventDefault();
-
-    document.querySelectorAll('.error').forEach (elemento => elemento.textContent = '');
-    mensaje.innerHTML = "";
-
-    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const regexTel = /^\d{3}-\d{2}-\d{3}$/;
-
-
-     if (datos.value.trim().length < 10 || datos.value.trim().length > 50){
-        document.getElementById("errorDatos").textContent = "Datos ingresados incorrectamente";
-         valido = false;
-    } 
-     if (!regexEmail.test(mail.value.trim())){
-        document.getElementById("errorMail").textContent = "Email incorrecto";
-         valido = false;
-    }
-     if (!regexTel.test(tel.value.trim())){
-        document.getElementById("errorTel").textContent = "Numero de telefono incorrecto. Debe ser 000-00-000";
-         valido = false;
-    } 
-    if (valido) {
-        const mensaje = document.getElementById("mensaje");
-        let message = document.createElement('div');
-        message.textContent = `Datos: ${datos.value} Mail: ${mail.value} Telefono: ${tel.value}`;
-        message.style.backgroundColor = "yellow";
-        message.style.textAlign = "center";      
-        form.appendChild(message);
-    }
-};
-</script>  
 </body>
 </html>

@@ -9,49 +9,88 @@
 <body>
     <header>
         <div id="titulo">
-            <h1>Netflix</h1>
+            <h1>Contacto</h1>
         </div>
             <nav id="botonesinicio">
                 <ul>
-                    <li><a href= "#section">Información</a></li>
-                    <li><a href= "#article">Disponibles</a></li>
-                    <li><a href= "#footer">Contactanos</a></li>
+                    <li><a href= "../index.html">SkinCare</a></li>
+                    <li><a href= "../pag2/pag2.html">Ropa</a></li>
+                    <li><a href= "pag3.html">Contacto</a></li>
                 </ul>
             </nav>
     </header>
     <section id="section">      
-        <div class="info">
-             <p>
-                 Netflix <br>
-                 Es un servicio de streaming que ofrece una gran variedad de películas,<br>
-                 series y documentales premiados en casi cualquier pantalla conectada a internet.<br>
-                 Ofrece un amplio catálogo de películas y series, y la posibilidad de personalizar la experiencia mediante la creación de perfiles (hasta cinco por cuenta). <br>
-                 También permite compartir la cuenta con personas que viven en el mismo hogar. <br>
-                 En algunos países, se puede añadir un miembro extra de otro hogar mediante una suscripción adicional. <br>
-                 Contratate Netflix!!
-            </p>           
-        </div>
+        <div id="contenedor" class="borde">
+        <h2>Ingrese Datos</h2>
+          <form action="" id="form" novalidate onsubmit = "validar(event)">
+            <label for="datos">Nombre y Apellido:</label>
+            <input type="text" id="datos" min="10" max="50" required><br>
+            <div id ="errorDatos" class="errores"></div>
+            <br><label for="Mail">Email:</label>
+            <input type="email" id="mail" required><br>
+            <div id="errorMail" class="errores"></div>
+            <br><label for="Telefono">Teléfono:</label>
+            <input type="tel" id="telefono" required><br>
+            <div id="errorTel" class="errores"></div>
+            <br><button type ="submit" id="botones">Enviar</button>
+            <div id="mensaje"></div>
+     </div> 
     </section>
     <article>
-      /* carrusel */
-      <div class="carousel-container">
-        <img id="carousel-image" src="img/p1.jpeg" alt="carrusel">
-      </div>
 
-      <div class="carousel-buttons">
-      <button onclick="cambiarImagen(-1)">Anterior</button>
-      <button onclick="cambiarImagen(1)">Siguiente</button>
-      </div>
-      <script src="pag3.js"></script>
     </article>
     <footer id="footer">
-        <div id="derechos">
-            <p>Copyright &copy 2025 - Netflix</p>
-        </div>
-        <div id="contacto">
-            <p>Correo: netflix123@gmail.com</p>
-            <p>Redes: @NetflixOficial</p>
-        </div>
+        <div>
+         <h3>Social networks:</h3>
+           <p>Instagram: @khymads</p>
+           <p>Facebook: @khymads</p>
+       </div>
+        <div id="ubicacion">
+          <h2>Local in:</h2>
+          <p>Shopping center.</p>
+       </div>
     </footer>
+
+    <script>
+    const datos = document.getElementById("datos");
+    const mail = document.getElementById("mail"); 
+    const tel = document.getElementById("telefono");
+    const form = document.getElementById("form");
+
+    function validar(e){ 
+    
+    let valido = true;
+    e.preventDefault();
+
+    document.querySelectorAll('.error').forEach (elemento => elemento.textContent = '');
+    mensaje.innerHTML = "";
+
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const regexTel = /^\d{3}-\d{2}-\d{3}$/;
+
+
+     if (datos.value.trim().length < 10 || datos.value.trim().length > 50){
+        document.getElementById("errorDatos").textContent = "Datos ingresados incorrectamente";
+         valido = false;
+    } 
+     if (!regexEmail.test(mail.value.trim())){
+        document.getElementById("errorMail").textContent = "Email incorrecto";
+         valido = false;
+    }
+     if (!regexTel.test(tel.value.trim())){
+        document.getElementById("errorTel").textContent = "Numero de telefono incorrecto. Debe ser 000-00-000";
+         valido = false;
+    } 
+    if (valido) {
+        const mensaje = document.getElementById("mensaje");
+        let message = document.createElement('div');
+        message.textContent = `Datos: ${datos.value} Mail: ${mail.value} Telefono: ${tel.value}`;
+        message.style.textAlign = "center";  
+        message.style.paddingTop = "50px";
+        message.style.marginRight = "50px"; 
+        form.appendChild(message);
+    }
+};
+</script>  
 </body>
 </html>

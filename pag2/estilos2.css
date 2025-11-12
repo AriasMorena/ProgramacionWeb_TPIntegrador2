@@ -30,12 +30,11 @@ header {
 
 #titulo h1 {
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 700px;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin: 0;
 }
-
 
 nav ul {
   list-style: none;
@@ -79,7 +78,6 @@ header div button:hover {
   border: 1px solid var(--black);
 }
 
-
 #section {
   display: flex;
   justify-content: space-between;
@@ -98,18 +96,6 @@ header div button:hover {
   letter-spacing: 0.5px;
   line-height: 1.8;
 }
-
-#otros {
-  text-align: right;
-}
-
-#otros h3 {
-  font-weight: 500;
-  font-size: 1rem;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
 .enlaces {
   color: var(--black);
   text-decoration: none;
@@ -117,12 +103,9 @@ header div button:hover {
   font-size: 0.9rem;
   transition: opacity 0.3s ease;
 }
-
 .enlaces:hover {
   opacity: 0.6;
 }
-
-
 #article {
   display: flex;
   justify-content: center;
@@ -157,7 +140,6 @@ header div button:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
-
 footer {
   display: flex;
   justify-content: space-between;
@@ -179,7 +161,6 @@ footer p {
   margin: 4px 0;
   font-size: 0.95rem;
 }
-
 
 @media (max-width: 900px) {
   header {
@@ -215,7 +196,3 @@ footer p {
     background-color: #d4d3d0;
   }
 }
-
-
-
-    
