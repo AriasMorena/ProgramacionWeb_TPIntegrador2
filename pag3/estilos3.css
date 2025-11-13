@@ -35,19 +35,28 @@ header {
   margin: 0;
 }
 
+<<<<<<< HEAD
 #titulo p {
   margin-top: 0;
   font-size: 1.1rem;
 }
 
+=======
+.h2 {
+  background-color: antiquewhite;
+  padding: 10px;
+  margin-right: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+>>>>>>> 7619959f89a9139e8e0beff4d8929f4822466905
 
 nav ul {
   list-style: none;
   display: flex;
   gap: 30px;
   margin: 0;
-  padding: 0;
-  
+  padding: 0;  
 }
 
 nav a {
@@ -88,14 +97,7 @@ header div button:hover {
   padding: 80px 60px;
   border-bottom: 1px solid var(--border);
 }
-#article {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
-  padding: 60px 60px 100px;
-  flex-wrap: wrap;
-}
+
 footer {
   display: flex;
   justify-content: space-between;
@@ -137,8 +139,9 @@ footer p {
     padding-bottom: 10px;
 }
 #contenedor input {
-    display: block;     
+    display: block;       
 }
+
 .borde{
     border: 3px solid rgb(172, 76, 76) ;
     border-radius: 15px;
