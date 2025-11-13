@@ -36,6 +36,11 @@ header {
   margin: 0;
 }
 
+#titulo p {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
 nav ul {
   list-style: none;
   display: flex;
