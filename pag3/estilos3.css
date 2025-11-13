@@ -35,14 +35,20 @@ header {
   margin: 0;
 }
 
+.h2 {
+  background-color: antiquewhite;
+  padding: 10px;
+  margin-right: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+}
 
 nav ul {
   list-style: none;
   display: flex;
   gap: 30px;
   margin: 0;
-  padding: 0;
-  
+  padding: 0;  
 }
 
 nav a {
@@ -83,14 +89,7 @@ header div button:hover {
   padding: 80px 60px;
   border-bottom: 1px solid var(--border);
 }
-#article {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
-  padding: 60px 60px 100px;
-  flex-wrap: wrap;
-}
+
 footer {
   display: flex;
   justify-content: space-between;
@@ -120,34 +119,6 @@ footer p {
     margin-top: 40px;
 }
 
-.carousel-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-#carousel-image {
-    width: 300px;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 15px;
-}
-
-.carousel-buttons {
-    margin-top: 15px;
-    text-align: center;
-}
-
-.carousel-buttons button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    border: none;
-    background-color: #e50914;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-}
 #contenedor{
     width: 250px;
     height: auto;
@@ -160,8 +131,9 @@ footer p {
     padding-bottom: 10px;
 }
 #contenedor input {
-    display: block;     
+    display: block;       
 }
+
 .borde{
     border: 3px solid rgb(172, 76, 76) ;
     border-radius: 15px;
