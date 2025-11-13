@@ -23,7 +23,7 @@
     <section id="section">      
         <div id="contenedor" class="borde">
         <h2>Enter your details</h2>
-          <form action="" id="form" novalidate onsubmit = "validar(event)">
+          <form id="form" novalidate onsubmit = "validar(event)">
             <label for="datos">First and last name:</label>
             <input type="text" id="datos" min="10" max="50" required><br>
             <div id ="errorDatos" class="errores"></div>
@@ -34,6 +34,7 @@
             <input type="tel" id="telefono" required><br>
             <div id="errorTel" class="errores"></div>
             <br><button type ="submit" id="botones">Send</button>
+            <button type="reset" id="botones">Reset</button>
             <div id="mensaje"></div>
      </div> 
     </section>
@@ -54,13 +55,14 @@
     const mail = document.getElementById("mail"); 
     const tel = document.getElementById("telefono");
     const form = document.getElementById("form");
-
+    const mensaje = document.getElementById("mensaje");
+    
     function validar(e){ 
     
     let valido = true;
     e.preventDefault();
 
-    document.querySelectorAll('.error').forEach (elemento => elemento.textContent = '');
+    document.querySelectorAll('.errores').forEach (elemento => elemento.textContent = '');
     mensaje.innerHTML = "";
 
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -68,7 +70,7 @@
 
 
      if (datos.value.trim().length < 10 || datos.value.trim().length > 50){
-        document.getElementById("errorDatos").textContent = "Datos ingresados incorrectamente";
+        document.getElementById("errorDatos").textContent = "Datos ingresados incorrectamente. Deben tener entre 10 y 50 caracteres";
          valido = false;
     } 
      if (!regexEmail.test(mail.value.trim())){
@@ -76,7 +78,7 @@
          valido = false;
     }
      if (!regexTel.test(tel.value.trim())){
-        document.getElementById("errorTel").textContent = "Numero de telefono incorrecto. Debe ser 000-00-000";
+        document.getElementById("errorTel").textContent = "Número de telefono incorrecto. Debe ser 000-00-000";
          valido = false;
     } 
     if (valido) {
@@ -87,7 +89,9 @@
         message.style.paddingTop = "50px";
         message.style.marginRight = "50px"; 
         form.appendChild(message);
-    }
+        form.reset();
+        document.getElementById("datos").focus();
+    }  
 };
 </script>  
 </body>

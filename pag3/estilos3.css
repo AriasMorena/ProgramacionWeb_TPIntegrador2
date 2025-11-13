@@ -141,6 +141,10 @@ footer p {
     background-color: rgb(221, 120, 120);
     color: black;
 }
+
+button [type="reset"]:active {
+  background-color: red;
+}
 .errores {
     color: red;
 }
