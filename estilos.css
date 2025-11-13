@@ -91,7 +91,8 @@ header div button:hover {
 
 #info {
   max-width: 500px;
-  padding-left: 650px;
+  padding-right: 650px;
+
 }
 
 #info p {
@@ -99,7 +100,7 @@ header div button:hover {
   color: var(--text);
   letter-spacing: 0.5px;
   line-height: 1.8;
-  text-align: right;
+  text-align: left;
 }
 
 #article {

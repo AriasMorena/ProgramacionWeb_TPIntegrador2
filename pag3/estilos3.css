@@ -35,21 +35,11 @@ header {
   margin: 0;
 }
 
-<<<<<<< HEAD
 #titulo p {
   margin-top: 0;
   font-size: 1.1rem;
 }
 
-=======
-.h2 {
-  background-color: antiquewhite;
-  padding: 10px;
-  margin-right: 50px;
-  margin-bottom: 20px;
-  text-align: center;
-}
->>>>>>> 7619959f89a9139e8e0beff4d8929f4822466905
 
 nav ul {
   list-style: none;

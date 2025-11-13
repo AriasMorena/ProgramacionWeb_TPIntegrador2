@@ -18,7 +18,7 @@ function cambiarImagen(direccion) {
 if(contador < 0) {
       contador = imagenes.length - 1;
 } else if (contador >= imagenes.length){
-    conatdor = 0;
+    contador = 0;
 }
 
 imagenElemento.src = imagenes[contador];
